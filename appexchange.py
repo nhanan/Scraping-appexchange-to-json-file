@@ -27,9 +27,10 @@ WebDriverWait(driver, 10).until(
 ).click()
 
 # Filter country
-print("Applying United States filter...")
+country = "United States"
+print(f"Applying {country} filter...")
 select = Select(driver.find_element(By.ID, 'select_country'))
-select.select_by_visible_text("United States")
+select.select_by_visible_text(country)
 apply_button = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.ID, 'appx_btn_filter_apply'))
 )
